@@ -7,6 +7,7 @@ import Menu from '../components/Menu';
 export default function Projetos() {
   return (
     <div className="relative">
+      <Menu />
       <header className="relative h-screen">
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -20,9 +21,6 @@ export default function Projetos() {
 
           <div className="absolute inset-0 bg-orange-100 mix-blend-multiply" />
         </div>
-
-        <Menu />
-
         <div className="flex flex-col justify-center items-center h-full absolute top-0 left-0 right-0">
           <div className="text-center">
             <h1 className="mt-1 text-center font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-7xl">

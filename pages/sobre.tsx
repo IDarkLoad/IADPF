@@ -6,6 +6,7 @@ import Menu from '../components/Menu';
 export default function Sobre() {
     return (
         <div className="relative">
+            <Menu />
             <header className="relative h-screen">
                 <div className="absolute inset-0 overflow-hidden">
                     <Image
@@ -19,9 +20,6 @@ export default function Sobre() {
 
                     <div className="absolute inset-0 bg-orange-100 mix-blend-multiply" />
                 </div>
-
-                <Menu />
-
                 <div className="flex flex-col justify-center items-center h-full absolute top-0 left-0 right-0">
                     <div className="text-center">
                         <h1 className="mt-1 text-center font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-7xl">
@@ -67,38 +65,6 @@ export default function Sobre() {
                     </div>
                 </div>
             </section>
-            <section className="py-12 flex justify-center items-center">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
-                    <div className="lg:w-1/2 mt-6 lg:mt-0">
-                        <Image
-                            src={clovis}
-                            alt="Descrição da Imagem"
-                            width={500}
-                            height={500}
-                            className="rounded-lg"
-                        />
-                    </div>
-                    <div className="lg:w-1/2 lg:pr-8">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Pastor Clóvis Bernardo de Lima</h2>
-                        <p className="mt-4 text-lg text-gray-700">
-                            A Ação Social Terra Fértil, liderada por nossa igreja, é um projeto notável
-                            que visa ajudar famílias vulneráveis, fornecendo recursos essenciais como
-                            alimentos, roupas e itens de higiene. Destacando-se pela ênfase em capacitar
-                            as pessoas, a iniciativa promove oportunidades de emprego e habilidades práticas,
-                            fortalecendo a autonomia das comunidades para construir um futuro mais promissor,
-                            enquanto dedica atenção especial à saúde mental e espiritual.
-                        </p>
-                        <p className="mt-4 text-lg text-gray-700">
-                            Ao agir como catalisador de transformação social, a Ação Social Terra Fértil
-                            vai além do alívio imediato, deixando um impacto duradouro ao promover dignidade
-                            e resiliência nas vidas daqueles que alcança. Essa demonstração tangível
-                            do comprometimento da igreja evangélica contribui significativamente para
-                            a construção de comunidades mais fortes e esperançosas.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
         </div>
     );
 }

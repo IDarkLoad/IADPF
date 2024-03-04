@@ -1,82 +1,92 @@
-import { useState } from 'react';
-import Image from 'next/image';
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../public/Logo.png';
-import Link from 'next/link';
 
+const navigation = [
+  { name: 'Home', href: '/', current: true },
+  { name: 'Projetos', href: '/projects', current: false },
+  { name: 'Calendário', href: '/calendar', current: false },
+  { name: 'Sobre', href: '/sobre', current: false },
+]
 
-export default function Menu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  return (
-    <div className="absolute inset-x-0 top-0 z-50">
-      <div className="flex justify-between items-center px-4 py-3 sm:px-6">
-        <div className="flex items-center">
-          <Image src={logo} alt="Logo" width={120} height={40} />
-        </div>
-        <div className="sm:hidden">
-          <button
-            type="button"
-            className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
-            onClick={toggleMenu}
-          >
-            {isMenuOpen ? (
-              <svg
-                className="h-6 w-6 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M6.293 6.293a1 1 0 0 1 1.414 0L12 10.586l4.293-4.293a1 1 0 1 1 1.414 1.414L13.414 12l4.293 4.293a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L10.586 12 6.293 7.707a1 1 0 0 1 0-1.414z"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-6 w-6 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
-        <ul className={`sm:flex sm:space-x-4 sm:px-4 sm:py-2 ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <li>
-            <Link href="/">
-              <p className="text-white hover:text-gray-300">Home</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects">
-              <p className="text-white hover:text-gray-300">Projetos</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/calendar">
-              <p className="text-white hover:text-gray-300">Calendário</p>
-            </Link>
-          </li>
-          <li><a href="/sobre" className="text-white hover:text-gray-300">Sobre</a></li>
-        </ul>
-      </div>
-    </div>
-  );
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
+export default function Menun() {
+  return (
+    <Disclosure as="nav" className="bg-black">
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-shrink-0 items-center">
+                  <img
+                    className="h-10 w-auto"
+                    src={logo.src}
+                    alt="Company"
+                  />
+                </div>
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'rounded-md px-3 py-2 text-sm font-medium'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <a href="/colabore">
+                  <button className="bg-gray-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-md hover:bg-gray-600 hover:text-white">Colabore</button>
+                </a>
+              </div>
+            </div>
+          </div>
 
-
-
-
-
-
-
-
-
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'block rounded-md px-3 py-2 text-base font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+  )
+}
