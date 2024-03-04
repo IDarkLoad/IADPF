@@ -132,9 +132,14 @@ export default function Gallery() {
               transformação, fortalecendo a sua fé, avivando a chama da sua devoção ao serviço divino
               e tornando-se um líder que exerce um impacto eterno nas vidas das pessoas. Deixe o amor
               de Cristo guiar o seu caminho e a sua vida se tornará uma bênção para todos aqueles que você tocar.</p>
-            <button className="px-6 py-3 mt-4 border-2 border-white text-white font-semibold rounded-md transition duration-300 ease-in-out hover:bg-white hover:text-black">
-              Quero conhecer Jesus
-            </button>
+            <div className="flex justify-center mt-8">
+              <a href="https://www.google.com/maps/place/Igreja+Assembl%C3%A9ia+de+Deus+Pentecostal+da+F%C3%A9/@-7.1380851,-34.8278543,17z/data=!3m1!4b1!4m6!3m5!1s0x7acc3d22e2954c7:0xcedc1bda04465845!8m2!3d-7.1380851!4d-34.8252794!16s%2Fg%2F11p12z5db_?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 border-2 border-white text-black-500 font-semibold rounded-md transition duration-300 ease-in-out hover:bg-white hover:text-black">
+                Quero conhecer jesus
+              </a>
+            </div>
           </div>
         </div>
       </section>
