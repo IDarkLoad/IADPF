@@ -34,6 +34,7 @@ export default function Calendario() {
                                 <li>Culto da Família - Toda quarta-feira às 19:30</li>
                                 <li>Culto de Libertação - Toda sexta-feira às 19:30</li>
                                 <li>Culto de Adoração - Todo domingo às 18:00</li>
+                                <li>Circulo de Oração- Todo sábado às 15:00</li>
                             </ul>
                         </div>
 
