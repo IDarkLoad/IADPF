@@ -37,14 +37,6 @@ export default function Calendario() {
                                 <li>Circulo de Oração- Todo sábado às 15:00</li>
                             </ul>
                         </div>
-
-                        {/* Calendar Frame with Special Events */}
-                        <div className="bg-white p-4 rounded-md mt-8">
-                            <h2 className="text-xl font-semibold mb-2">Eventos Especiais:</h2>
-                            <ul>
-                                <li>Batismo nas Águas - Dia 17 de março</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </header>

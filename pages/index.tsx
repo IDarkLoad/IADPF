@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import img from '../public/hero.jpeg';
+import img from '../public/luis.jpg';
 import pastor from '../public/pastor.jpeg';
 import famigos from '../public/amigos.jpeg';
 import church from '../public/church.jpg';
