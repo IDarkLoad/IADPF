@@ -46,7 +46,7 @@ export default function Doacoes() {
       <div className="bg-gray-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">Contribua Conosco</h2>
+            <h2 className="text-base font-semibold leading-7 text-amber-600">Contribua Conosco</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Faça parte da nossa missão através das suas doações
             </p>
@@ -59,7 +59,7 @@ export default function Doacoes() {
               {features.map((feature) => (
                 <div key={feature.name} className="relative pl-16">
                   <dt className="text-base font-semibold leading-7 text-gray-100">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-600">
                       <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     {feature.name}
@@ -78,7 +78,7 @@ export default function Doacoes() {
               <p className="mr-2 text-white">{pixKey}</p>
               <button
                 onClick={() => handleCopy(pixKey, setCopiedPix)}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:border-indigo-300"
+                className="px-4 py-2 bg-amber-600 text-white rounded-md hover:bg-amber-700 focus:outline-none focus:ring focus:border-amber-300"
               >
                 {copiedPix ? 'Copiado!' : 'Copiar Chave PIX'}
               </button>
