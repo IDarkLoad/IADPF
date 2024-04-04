@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from '../public/Logo.png'
+import Logo2 from '../public/Logo2.png'
 
 const navigation = [
   { name: 'Home', href: '/'},
@@ -54,8 +55,8 @@ export default function Menum() {
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Sua Empresa</span>
                 <img
-                  className="h-8 w-auto"
-                  src={Logo.src}
+                  className="h-12 w-auto"
+                  src={Logo2.src}
                   alt="Logotipo da Sua Empresa"
                 />
               </a>
@@ -80,14 +81,6 @@ export default function Menum() {
                       {item.name}
                     </a>
                   ))}
-                </div>
-                <div className="py-6">
-                  <a
-                    href="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Entrar
-                  </a>
                 </div>
               </div>
             </div>
