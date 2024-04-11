@@ -19,9 +19,13 @@ export default function Footer() {
           Instagram
         </a>
       </div>
+      <div className="mt-4 text-gray-600">
+        Desenvolvido por <a className="footer-link" href="https://lithiumcompany.online/" target="_blank" rel="noopener noreferrer">Lithium Company</a>
+      </div>
     </footer>
   );
 }
+
 
 
 
